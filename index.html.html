@@ -1,0 +1,993 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kelas Online AI Kazna Story Studio - Belajar Bikin Video AI dari Nol</title>
+<meta name="description" content="Dua kelas online AI, materinya berurutan plus grup pendampingan. Mulai Rp199.000 sekali bayar, akses seumur hidup, bisa DP Rp50.000. Garansi 7 hari uang kembali.">
+
+<!--
+==================================================================
+KAZNA STORY STUDIO - LP KELAS ONLINE
+Sistem desain sama dengan LP Kelas Offline Batch 4.
+
+SEMUA CTA MENGARAH KE WHATSAPP ADMIN SALMA 0851-2272-9821
+Tiap tombol membawa pesan yang sudah terisi sesuai paket yang dipilih,
+jadi admin langsung tahu maunya apa tanpa perlu tanya ulang.
+
+MASIH PERLU DIISI:
+  FOTO_1 .. FOTO_3   dokumentasi kelas & karya peserta
+  FOTO_PAYPAL        bukti pembayaran klien luar, disensor dulu
+
+CATATAN
+- Semua style di-scope ke .kss supaya tidak bentrok dengan tema host.
+- Tanpa emoji, tanpa library ikon, tanpa CDN selain Google Fonts.
+- Nilai stack: kelas 499.000 + 7 tools @49.000 (343.000) + ebook 49.000
+  = 891.000. Bayar 199.000, hemat 692.000 (78%).
+==================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+.kss{
+  --ink:#0E1B2E; --paper:#F7F7F4; --paper-2:#FFFFFF; --tint:#EFEFEA;
+  --amber:#D99213; --amber-soft:#FDF3DF; --amber-line:#F0DEB4;
+  --body:#4A5567; --muted:#7C8798; --line:#E2E1DA; --line-strong:#CFCEC5;
+  --r-box:18px; --r-input:12px;
+  color-scheme:light;
+  font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+  background:var(--paper); color:var(--body);
+  font-size:17px; line-height:1.68; letter-spacing:-0.005em;
+  -webkit-font-smoothing:antialiased; text-align:left;
+}
+.kss *,.kss *::before,.kss *::after{box-sizing:border-box;}
+.kss p,.kss h1,.kss h2,.kss h3,.kss h4,.kss ul,.kss ol,.kss li,.kss figure{margin:0;padding:0;}
+.kss ul,.kss ol{list-style:none;}
+.kss img{max-width:100%;display:block;}
+.kss a{color:inherit;text-decoration:none;}
+.kss strong{color:var(--ink);font-weight:700;}
+
+.kss .wrap{max-width:1120px;margin:0 auto;padding:0 22px;}
+.kss .col{max-width:720px;}
+.kss .sec{padding:60px 0;}
+@media(min-width:900px){ .kss .sec{padding:100px 0;} }
+
+.kss .kicker{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:16px;}
+.kss h2{font-size:29px;line-height:1.18;font-weight:800;color:var(--ink);letter-spacing:-.03em;margin-bottom:20px;}
+@media(min-width:900px){ .kss h2{font-size:43px;} }
+.kss h2 .soft{color:var(--muted);}
+.kss .big-body{font-size:17.5px;}
+@media(min-width:900px){ .kss .big-body{font-size:19px;line-height:1.72;} }
+
+/* tombol */
+.kss .btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--amber);color:#1A1204;font-weight:800;font-size:16.5px;
+  letter-spacing:-.01em;white-space:nowrap;padding:16px 28px;border-radius:999px;
+  border:0;cursor:pointer;font-family:inherit;
+  box-shadow:0 6px 18px rgba(217,146,19,.28);
+  transition:transform .18s cubic-bezier(.16,1,.3,1), box-shadow .18s ease, background .18s ease;
+}
+.kss .btn:hover{background:#C9840C;box-shadow:0 10px 26px rgba(217,146,19,.34);transform:translateY(-2px);}
+.kss .btn:active{transform:translateY(0) scale(.985);}
+.kss .btn.wide{width:100%;}
+.kss .btn.ghost{
+  background:transparent;color:var(--ink);border:1.5px solid var(--line-strong);box-shadow:none;
+}
+.kss .btn.ghost:hover{background:var(--tint);border-color:var(--ink);}
+.kss .under-btn{font-size:13.5px;color:var(--muted);margin-top:12px;}
+
+/* sticky bar */
+.kss .bar{position:sticky;top:0;z-index:900;background:rgba(247,247,244,.94);
+  -webkit-backdrop-filter:saturate(160%) blur(10px);backdrop-filter:saturate(160%) blur(10px);
+  border-bottom:1px solid var(--line);}
+.kss .bar-in{max-width:1120px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;gap:14px;height:64px;}
+.kss .bar-id{line-height:1.2;min-width:0;}
+.kss .bar-id b{display:block;font-size:13.5px;font-weight:800;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.kss .bar-id span{font-size:11.5px;color:var(--muted);}
+.kss .bar-price{margin-left:auto;text-align:right;line-height:1.2;flex-shrink:0;}
+.kss .bar-price s{display:block;font-size:11.5px;color:var(--muted);}
+.kss .bar-price b{font-size:16px;font-weight:800;color:var(--ink);}
+.kss .bar .btn{padding:11px 20px;font-size:14px;box-shadow:none;}
+@media(max-width:640px){
+  .kss .bar-in{gap:10px;height:60px;}
+  .kss .bar-id span{display:none;}
+  .kss .bar-id b{font-size:12.5px;max-width:108px;}
+  .kss .bar-price s{display:none;}
+  .kss .bar .btn{padding:10px 16px;font-size:13.5px;}
+}
+
+/* hero */
+.kss .hero{padding:44px 0 56px;}
+@media(min-width:900px){
+  .kss .hero{padding:72px 0 84px;}
+  .kss .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:56px;align-items:start;}
+}
+.kss .hero h1{font-size:37px;line-height:1.08;font-weight:800;color:var(--ink);letter-spacing:-.042em;margin-bottom:22px;}
+@media(min-width:900px){ .kss .hero h1{font-size:60px;} }
+.kss .hero h1 .l2{display:block;color:var(--amber);}
+.kss .hero p.sub{font-size:18px;line-height:1.6;max-width:32ch;margin-bottom:30px;}
+@media(min-width:900px){ .kss .hero p.sub{font-size:20.5px;max-width:34ch;} }
+
+.kss .promo{background:var(--ink);border-radius:var(--r-box);padding:26px;color:#C6D2E4;
+  box-shadow:0 24px 50px -22px rgba(14,27,46,.45);}
+@media(max-width:899px){ .kss .promo{margin-top:34px;} }
+.kss .promo .ttl{font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);
+  padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.14);margin-bottom:4px;}
+.kss .promo dl{display:grid;grid-template-columns:auto 1fr;}
+.kss .promo dt{font-size:13.5px;color:#8D9DB7;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.08);}
+.kss .promo dd{font-size:16px;font-weight:700;color:#fff;text-align:right;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.08);}
+.kss .promo dd.hi{color:var(--amber);}
+.kss .promo dl>:nth-last-child(-n+2){border-bottom:0;}
+.kss .promo .note{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);font-size:14px;line-height:1.6;color:#93A5BF;}
+
+/* band angka */
+.kss .band{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-2);}
+.kss .band-in{display:grid;}
+@media(min-width:760px){ .kss .band-in{grid-template-columns:repeat(3,1fr);} }
+.kss .band-it{padding:26px 0;border-bottom:1px solid var(--line);}
+@media(min-width:760px){
+  .kss .band-it{padding:34px 30px;border-bottom:0;border-left:1px solid var(--line);}
+  .kss .band-it:first-child{padding-left:0;border-left:0;}
+}
+.kss .band-it:last-child{border-bottom:0;}
+.kss .band-it b{display:block;font-size:38px;font-weight:800;color:var(--ink);letter-spacing:-.04em;line-height:1;}
+.kss .band-it span{display:block;font-size:14.5px;color:var(--muted);margin-top:9px;max-width:28ch;}
+
+/* pemandu pilihan */
+.kss .choose{display:grid;gap:16px;margin-top:8px;}
+@media(min-width:820px){ .kss .choose{grid-template-columns:1fr 1fr;gap:22px;} }
+.kss .pick{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-box);padding:28px;}
+.kss .pick h3{font-size:23px;font-weight:800;color:var(--ink);letter-spacing:-.025em;margin-bottom:6px;}
+.kss .pick .for{font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:16px;}
+.kss .pick dl{border-top:1px solid var(--line);}
+.kss .pick dt{font-size:12.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;padding-top:14px;}
+.kss .pick dd{font-size:16px;line-height:1.55;color:var(--ink);padding:4px 0 14px;border-bottom:1px solid var(--line);}
+.kss .pick dd:last-of-type{border-bottom:0;}
+.kss .helper{margin-top:22px;background:var(--amber-soft);border:1px solid var(--amber-line);
+  border-radius:var(--r-box);padding:24px;font-size:17px;line-height:1.7;color:#6E4C08;}
+.kss .helper b{color:#4E3505;}
+
+/* keluhan */
+.kss .aches{display:grid;margin-top:12px;}
+@media(min-width:860px){ .kss .aches{grid-template-columns:1fr 1fr;column-gap:60px;} }
+.kss .ache{padding:26px 0;border-top:1px solid var(--line);}
+.kss .ache q{display:block;font-size:19.5px;line-height:1.4;font-weight:700;color:var(--ink);letter-spacing:-.02em;quotes:'"' '"';margin-bottom:9px;}
+@media(min-width:900px){ .kss .ache q{font-size:21.5px;} }
+.kss .ache p{font-size:15.5px;line-height:1.62;}
+
+/* percobaan gagal */
+.kss .tried li{font-size:17px;color:var(--muted);padding:14px 0 14px 28px;position:relative;border-bottom:1px solid var(--line);}
+.kss .tried li:last-of-type{border-bottom:0;}
+.kss .tried li::before{content:"\2715";position:absolute;left:0;top:14px;color:var(--line-strong);font-size:13px;}
+.kss .turn{margin-top:26px;padding:24px 26px;background:var(--ink);color:#C6D2E4;border-radius:var(--r-box);font-size:18px;line-height:1.6;}
+.kss .turn b{color:var(--amber);}
+
+/* pergeseran dulu -> sekarang */
+.kss .shift{margin-top:12px;}
+.kss .shift li{padding:22px 0;border-top:1px solid var(--line);display:grid;gap:8px;}
+@media(min-width:820px){ .kss .shift li{grid-template-columns:1fr auto 1fr;align-items:center;gap:26px;} }
+.kss .shift .was{font-size:16.5px;color:var(--muted);}
+.kss .shift .arr{font-size:14px;font-weight:800;color:var(--amber);letter-spacing:.1em;}
+@media(max-width:819px){ .kss .shift .arr{display:none;} }
+.kss .shift .now{font-size:17px;font-weight:700;color:var(--ink);line-height:1.5;}
+
+/* blok gelap simulasi */
+.kss .dark{background:var(--ink);color:#B9C7DC;}
+.kss .dark h2{color:#fff;}
+.kss .dark .kicker{color:var(--amber);}
+.kss .rail{margin-top:36px;border-left:2px solid rgba(255,255,255,.14);padding-left:26px;}
+@media(min-width:900px){ .kss .rail{padding-left:38px;margin-left:8px;} }
+.kss .beat{position:relative;padding-bottom:36px;}
+.kss .beat:last-child{padding-bottom:0;}
+.kss .beat::before{content:"";position:absolute;left:-33px;top:9px;width:10px;height:10px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 5px var(--ink);}
+@media(min-width:900px){ .kss .beat::before{left:-45px;} }
+.kss .beat .t{font-size:13px;font-weight:800;letter-spacing:.1em;color:var(--amber);text-transform:uppercase;margin-bottom:8px;}
+.kss .beat h3{font-size:20px;font-weight:700;color:#fff;margin-bottom:10px;letter-spacing:-.02em;}
+.kss .beat p{font-size:16.5px;line-height:1.62;}
+.kss .typed{margin:14px 0;padding:16px 18px;border-radius:14px;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.13);font-size:16px;color:#DCE7F8;line-height:1.55;}
+.kss .reply{margin:14px 0;padding:20px 22px;border-radius:14px;background:#fff;color:var(--body);
+  font-size:16.5px;line-height:1.66;box-shadow:0 20px 44px -22px rgba(0,0,0,.55);}
+.kss .reply b{color:var(--ink);}
+
+/* modul */
+.kss .ladder{margin-top:14px;counter-reset:st;}
+.kss .ladder li{counter-increment:st;position:relative;padding:26px 0 26px 62px;border-top:1px solid var(--line);}
+@media(min-width:900px){
+  .kss .ladder li{padding-left:96px;max-width:76ch;}
+  .kss .ladder li:nth-child(even){margin-left:5%;}
+}
+.kss .ladder li::before{content:"Modul " counter(st);position:absolute;left:0;top:26px;font-size:13px;font-weight:800;color:var(--amber);letter-spacing:.04em;}
+@media(max-width:899px){ .kss .ladder li::before{font-size:12px;} }
+.kss .ladder h3{font-size:19px;font-weight:700;color:var(--ink);margin-bottom:7px;letter-spacing:-.02em;}
+.kss .ladder p{font-size:16px;line-height:1.6;}
+
+/* jalur cuan */
+.kss .money{background:var(--tint);border-top:1px solid var(--line);}
+.kss .rail-x{display:grid;grid-auto-flow:column;grid-auto-columns:76%;gap:14px;overflow-x:auto;
+  scroll-snap-type:x mandatory;margin:34px -22px 0;padding:0 22px 6px;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.kss .rail-x::-webkit-scrollbar{display:none;}
+.kss .rail-x li{scroll-snap-align:start;background:var(--paper-2);border:1px solid var(--line);
+  border-radius:var(--r-box);padding:24px;}
+.kss .rail-x b{display:block;font-size:13px;font-weight:800;letter-spacing:.1em;color:var(--amber);margin-bottom:14px;}
+.kss .rail-x h3{font-size:18.5px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.02em;line-height:1.3;}
+.kss .rail-x p{font-size:15.5px;line-height:1.6;}
+.kss .hint-x{font-size:13.5px;color:var(--muted);margin-top:14px;}
+@media(min-width:900px){
+  .kss .rail-x{grid-auto-flow:row;grid-template-columns:repeat(6,1fr);grid-auto-columns:auto;
+    overflow:visible;margin:36px 0 0;padding:0;gap:18px;}
+  .kss .rail-x li:nth-child(1),.kss .rail-x li:nth-child(2),.kss .rail-x li:nth-child(3){grid-column:span 2;}
+  .kss .rail-x li:nth-child(4),.kss .rail-x li:nth-child(5){grid-column:span 3;}
+  .kss .hint-x{display:none;}
+}
+
+/* tarif pasar + bukti bayaran */
+.kss .rates{margin-top:44px;padding-top:40px;border-top:1px solid var(--line-strong);display:grid;gap:30px;}
+@media(min-width:900px){ .kss .rates{grid-template-columns:1.2fr .8fr;gap:56px;align-items:start;margin-top:60px;padding-top:52px;} }
+.kss .rates h3{font-size:24px;font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1.24;margin-bottom:26px;max-width:20ch;}
+@media(min-width:900px){ .kss .rates h3{font-size:31px;} }
+.kss .fact{padding:20px 0;border-top:1px solid var(--line);}
+.kss .fact b{display:block;font-size:31px;font-weight:800;color:var(--amber);letter-spacing:-.035em;line-height:1.1;margin-bottom:7px;}
+@media(min-width:900px){ .kss .fact b{font-size:38px;} }
+.kss .fact span{display:block;font-size:16px;line-height:1.6;color:var(--body);max-width:46ch;}
+.kss .rates-note{margin-top:22px;font-size:16px;line-height:1.68;border-left:2px solid var(--amber);padding-left:18px;max-width:52ch;}
+.kss .rates-proof .slot{border-radius:var(--r-box);background:var(--paper-2);}
+.kss .rates-proof figcaption{margin-top:16px;font-size:14.5px;line-height:1.65;color:var(--muted);}
+
+/* flashdisk */
+.kss .fd{background:var(--ink);color:#B9C7DC;}
+.kss .fd h2{color:#fff;}
+.kss .fd .kicker{color:var(--amber);}
+.kss .fd-grid{display:grid;gap:26px;margin-top:32px;}
+@media(min-width:900px){ .kss .fd-grid{grid-template-columns:1fr .82fr;gap:52px;align-items:start;} }
+.kss .fd-list li{font-size:16.5px;line-height:1.6;padding:13px 0 13px 30px;position:relative;border-bottom:1px solid rgba(255,255,255,.1);}
+.kss .fd-list li:last-child{border-bottom:0;}
+.kss .fd-list li::before{content:"\2713";position:absolute;left:0;top:13px;color:var(--amber);font-weight:800;}
+.kss .fd-list li b{color:#fff;}
+.kss .fd-card{background:#fff;border-radius:var(--r-box);padding:30px;text-align:center;color:var(--body);
+  box-shadow:0 26px 54px -26px rgba(0,0,0,.6);}
+.kss .fd-card .lab{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--amber);margin-bottom:12px;}
+.kss .fd-card .num{font-size:44px;font-weight:800;color:var(--ink);letter-spacing:-.04em;line-height:1.05;margin-bottom:6px;}
+.kss .fd-card .sub{font-size:15px;color:var(--muted);margin-bottom:22px;}
+.kss .fd-card .ship{margin-top:14px;font-size:13.5px;color:var(--muted);line-height:1.6;}
+
+/* bento */
+.kss .bento{display:grid;gap:14px;margin-top:12px;}
+@media(min-width:860px){
+  .kss .bento{grid-template-columns:repeat(6,1fr);gap:18px;}
+  .kss .b-lg{grid-column:span 4;} .kss .b-sm{grid-column:span 2;}
+  .kss .b-md{grid-column:span 3;} .kss .b-full{grid-column:span 6;}
+}
+.kss .cell{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-box);
+  padding:26px;display:flex;flex-direction:column;justify-content:flex-end;min-height:160px;}
+.kss .cell.amber{background:var(--amber-soft);border-color:var(--amber-line);}
+.kss .cell.deep{background:var(--ink);border-color:var(--ink);}
+.kss .cell.deep h3{color:#fff;} .kss .cell.deep p{color:#A9BBD3;}
+.kss .cell h3{font-size:19px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.02em;line-height:1.3;}
+.kss .cell p{font-size:15.5px;line-height:1.6;}
+
+/* callout tanpa jadwal */
+.kss .noschedule{background:var(--ink);color:#C6D2E4;}
+.kss .noschedule .steps{display:grid;gap:14px;margin-bottom:30px;}
+@media(min-width:760px){ .kss .noschedule .steps{grid-template-columns:repeat(3,1fr);gap:20px;} }
+.kss .noschedule .steps div{padding:20px 22px;border:1px solid rgba(255,255,255,.16);border-radius:14px;background:rgba(255,255,255,.05);}
+.kss .noschedule .steps b{display:block;color:#fff;font-size:17px;margin-bottom:5px;}
+.kss .noschedule .steps span{font-size:15px;color:#A9BBD3;}
+.kss .noschedule .shout{font-size:22px;line-height:1.45;font-weight:700;color:#fff;letter-spacing:-.02em;max-width:24ch;}
+@media(min-width:900px){ .kss .noschedule .shout{font-size:30px;} }
+.kss .noschedule .shout em{font-style:normal;color:var(--amber);}
+
+/* kualifikasi */
+.kss .fit{display:grid;gap:26px;}
+@media(min-width:880px){ .kss .fit{grid-template-columns:1.1fr .9fr;gap:52px;align-items:start;} }
+.kss .fit li{font-size:17px;color:var(--ink);padding:13px 0 13px 30px;position:relative;line-height:1.55;}
+.kss .fit li::before{content:"\2713";position:absolute;left:0;top:13px;color:var(--amber);font-weight:800;}
+.kss .nofit{background:var(--tint);border-radius:var(--r-box);padding:26px;font-size:16.5px;line-height:1.68;}
+.kss .nofit b{display:block;color:var(--ink);margin-bottom:8px;}
+
+/* slot foto + galeri */
+.kss .slot{background:var(--tint);border:1px dashed var(--line-strong);border-radius:var(--r-box);
+  min-height:200px;display:flex;align-items:center;justify-content:center;text-align:center;padding:22px;
+  color:#9A9A8E;font-size:13px;font-weight:700;line-height:1.55;}
+.kss .proof-note{font-size:15.5px;line-height:1.65;border-left:2px solid var(--amber);padding-left:18px;margin-bottom:30px;max-width:62ch;}
+.kss .gal{display:grid;gap:14px;}
+@media(min-width:760px){ .kss .gal{grid-template-columns:repeat(4,1fr);gap:16px;} }
+.kss .gal figure:first-child{grid-column:span 2;}
+.kss .gal figcaption{font-size:13.5px;color:var(--muted);margin-top:10px;}
+
+/* offer */
+.kss .headline-offer{background:var(--ink);color:#B9C7DC;border-radius:var(--r-box);padding:30px;}
+.kss .headline-offer .lab{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--amber);margin-bottom:14px;}
+.kss .headline-offer h3{font-size:24px;font-weight:800;color:#fff;letter-spacing:-.025em;margin-bottom:10px;line-height:1.25;}
+.kss .headline-offer p{font-size:16.5px;line-height:1.6;}
+.kss .tagval{display:inline-block;margin-top:16px;font-size:13px;font-weight:700;padding:7px 14px;border-radius:999px;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;}
+.kss .tool .tagval{background:var(--paper);border:1px solid var(--line);color:var(--ink);margin-top:12px;}
+
+.kss .tools{display:grid;gap:14px;margin-top:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));}
+.kss .tool{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-box);padding:22px;}
+.kss .tool h4{font-size:17px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:-.02em;}
+.kss .tool p{font-size:15px;line-height:1.55;}
+
+.kss .sum{margin-top:22px;padding:28px;border-radius:var(--r-box);border:1px dashed var(--line-strong);background:var(--paper-2);text-align:center;}
+.kss .sum .lab{font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.kss .sum s{font-size:34px;font-weight:800;color:#A7A79C;letter-spacing:-.03em;}
+@media(min-width:900px){ .kss .sum s{font-size:44px;} }
+.kss .sum .plus{display:block;margin-top:10px;font-size:17px;font-weight:700;color:var(--ink);}
+
+/* lunas vs dp */
+.kss .plans{width:100%;border-collapse:collapse;margin-top:18px;background:var(--paper-2);
+  border:1px solid var(--line);border-radius:var(--r-box);overflow:hidden;}
+.kss .plans th,.kss .plans td{padding:15px 16px;text-align:left;font-size:15.5px;border-bottom:1px solid var(--line);}
+.kss .plans thead th{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--tint);font-weight:800;}
+.kss .plans thead th:nth-child(2){color:#8A5C05;background:var(--amber-soft);}
+.kss .plans td:nth-child(2){background:#FFFCF5;font-weight:700;color:var(--ink);}
+.kss .plans tbody th{font-weight:600;color:var(--body);}
+.kss .plans tr:last-child th,.kss .plans tr:last-child td{border-bottom:0;}
+.kss .plans-wrap{overflow-x:auto;}
+.kss .plans-note{margin-top:18px;font-size:16.5px;line-height:1.7;}
+
+/* harga */
+.kss .price{border:1px solid var(--line);border-radius:var(--r-box);padding:32px 26px;background:var(--paper);
+  text-align:center;box-shadow:0 26px 60px -34px rgba(14,27,46,.4);}
+@media(min-width:900px){ .kss .price{padding:44px 40px;} }
+.kss .price s{font-size:19px;color:var(--muted);font-weight:600;}
+.kss .price .num{font-size:50px;font-weight:800;color:var(--ink);letter-spacing:-.045em;line-height:1.05;margin:6px 0 12px;}
+@media(min-width:900px){ .kss .price .num{font-size:66px;} }
+.kss .price .cut{display:inline-block;font-size:13.5px;font-weight:800;padding:8px 16px;border-radius:999px;
+  background:var(--amber-soft);color:#8A5C05;border:1px solid var(--amber-line);}
+.kss .price ul{max-width:430px;margin:26px auto;text-align:left;}
+.kss .price li{font-size:16.5px;color:var(--ink);padding:9px 0 9px 28px;position:relative;line-height:1.5;}
+.kss .price li::before{content:"\2713";position:absolute;left:0;top:9px;color:var(--amber);font-weight:800;}
+.kss .tiers{max-width:460px;margin:0 auto;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+.kss .tiers div{display:flex;justify-content:space-between;gap:14px;padding:14px 18px;font-size:15.5px;text-align:left;}
+.kss .tiers div+div{border-top:1px solid var(--line);}
+.kss .tiers div:first-child{background:var(--amber-soft);color:var(--ink);font-weight:700;}
+.kss .honest{margin-top:24px;padding:26px;border-radius:var(--r-box);background:var(--paper-2);
+  border:1px solid var(--line);font-size:16.5px;line-height:1.72;}
+.kss .honest b{display:block;color:var(--ink);margin-bottom:10px;font-size:17.5px;}
+
+/* form */
+.kss .formbox{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-box);padding:28px;}
+@media(min-width:900px){ .kss .formbox{padding:38px;} }
+.kss .f{margin-bottom:18px;}
+.kss label{display:block;font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:7px;}
+.kss input{width:100%;padding:15px 16px;border:1.5px solid var(--line-strong);border-radius:var(--r-input);
+  font-size:16.5px;font-family:inherit;color:var(--ink);background:#fff;transition:border-color .15s ease, box-shadow .15s ease;}
+.kss input::placeholder{color:#98A2B1;}
+.kss input:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 4px rgba(14,27,46,.09);}
+.kss .help{font-size:13.5px;color:var(--muted);margin-top:6px;}
+.kss .picks{display:grid;gap:12px;}
+@media(min-width:760px){ .kss .picks{grid-template-columns:1fr 1fr;} }
+.kss .pickbtn{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  background:var(--paper-2);border:1.5px solid var(--line-strong);border-radius:var(--r-box);
+  padding:20px 22px;cursor:pointer;font-family:inherit;text-align:left;
+  transition:border-color .18s ease, transform .18s cubic-bezier(.16,1,.3,1), box-shadow .18s ease;
+}
+.kss .pickbtn:hover{border-color:var(--ink);transform:translateY(-2px);box-shadow:0 14px 30px -18px rgba(14,27,46,.5);}
+.kss .pickbtn b{display:block;font-size:17.5px;font-weight:700;color:var(--ink);letter-spacing:-.02em;}
+.kss .pickbtn span{display:block;font-size:14.5px;color:var(--muted);margin-top:3px;}
+.kss .pickbtn i{font-style:normal;font-size:17px;font-weight:800;color:var(--ink);white-space:nowrap;}
+.kss .pickbtn.hot{background:var(--amber-soft);border-color:var(--amber);}
+.kss .pickbtn.hot i{color:#8A5C05;}
+.kss .pickbtn.span2{grid-column:1 / -1;}
+.kss .pickbtn.quiet{background:transparent;border-style:dashed;}
+.kss .pickbtn.quiet b{color:var(--body);}
+.kss .safe{margin-top:20px;padding:16px 18px;border-radius:14px;background:var(--tint);
+  font-size:15px;line-height:1.62;color:var(--body);}
+.kss .safe b{color:var(--ink);}
+
+/* garansi */
+.kss .promise{border-top:3px solid var(--amber);border-radius:0 0 var(--r-box) var(--r-box);background:var(--paper-2);
+  padding:34px 28px;border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+@media(min-width:900px){ .kss .promise{padding:46px;} }
+.kss .promise h2{font-size:26px;}
+@media(min-width:900px){ .kss .promise h2{font-size:34px;} }
+.kss .promise p{font-size:17.5px;line-height:1.72;max-width:64ch;}
+.kss .promise p + p{margin-top:14px;color:var(--muted);font-size:16px;}
+
+/* faq */
+.kss details{border-bottom:1px solid var(--line);}
+.kss details:first-of-type{border-top:1px solid var(--line);}
+.kss summary{list-style:none;cursor:pointer;padding:22px 48px 22px 0;position:relative;
+  font-size:17.5px;font-weight:700;color:var(--ink);line-height:1.45;letter-spacing:-.015em;}
+.kss summary::-webkit-details-marker{display:none;}
+.kss summary::after{content:"";position:absolute;right:6px;top:31px;width:13px;height:2px;background:var(--amber);}
+.kss summary::before{content:"";position:absolute;right:11.5px;top:26px;width:2px;height:13px;background:var(--amber);transition:transform .2s ease;}
+.kss details[open] summary::before{transform:rotate(90deg);opacity:0;}
+.kss .ans{padding:0 0 24px;font-size:16.5px;line-height:1.72;max-width:68ch;}
+
+/* penutup */
+.kss .close{background:var(--ink);color:#B9C7DC;}
+.kss .close h2{font-size:30px;color:#fff;letter-spacing:-.035em;line-height:1.16;}
+@media(min-width:900px){ .kss .close h2{font-size:48px;} }
+.kss .close h2 .l2{display:block;color:var(--amber);}
+.kss .close p{font-size:17.5px;line-height:1.68;max-width:56ch;margin:0 0 32px;}
+.kss .close .under-btn{color:#8D9DB7;}
+.kss .foot{background:var(--ink);border-top:1px solid rgba(255,255,255,.1);padding:34px 0 44px;
+  font-size:14px;color:#8D9DB7;line-height:1.7;}
+.kss .foot b{color:#fff;display:block;font-size:15.5px;margin-bottom:6px;font-weight:700;}
+.kss .foot .fine{margin-top:16px;font-size:12.5px;color:#68789A;max-width:72ch;}
+
+/* motion */
+.kss .rise{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);}
+.kss .rise.in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){
+  .kss .rise{opacity:1;transform:none;transition:none;}
+  .kss .btn{transition:none;} .kss .btn:hover{transform:none;}
+}
+</style>
+</head>
+
+<body>
+<div class="kss">
+
+<!-- ===== bar ===== -->
+<div class="bar">
+  <div class="bar-in">
+    <div class="bar-id"><b>Kelas Online AI Kazna</b><span>Akses seumur hidup</span></div>
+    <div class="bar-price"><s>Rp891.000</s><b>Rp199.000</b></div>
+    <a class="btn" href="#daftar">Amankan Akses</a>
+  </div>
+</div>
+
+<!-- ===== hero ===== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="kicker">Kelas online, bisa kamu mulai malam ini juga</p>
+      <h1>Belajar Bikin Video AI dari Nol,<span class="l2">Sampai Hasilnya Layak Dijual.</span></h1>
+      <p class="sub">Materinya video step by step yang berurutan, plus grup pendampingan. Kalau kamu mentok, tinggal tanya.</p>
+      <a class="btn" href="#daftar">Amankan Akses Saya</a>
+      <p class="under-btn">Rp199.000 sekali bayar, aksesnya seumur hidup</p>
+    </div>
+
+    <aside class="promo">
+      <p class="ttl">Yang perlu kamu tahu duluan</p>
+      <dl>
+        <dt>Harga</dt><dd class="hi">Rp199.000</dd>
+        <dt>Jadwal</dt><dd>Tidak ada, mulai kapan saja</dd>
+        <dt>Akses</dt><dd>Seumur hidup</dd>
+        <dt>Bisa dicicil</dt><dd>DP Rp50.000</dd>
+      </dl>
+      <p class="note">Garansi 7 hari. Kalau belum bisa bikin satu pun konten AI, uang kembali 100%.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ===== band ===== -->
+<div class="band">
+  <div class="wrap band-in">
+    <div class="band-it rise"><b>4</b><span>modul berurutan, dari ide sampai upload</span></div>
+    <div class="band-it rise"><b>7</b><span>tools AI siap pakai, motong waktu kerjamu</span></div>
+    <div class="band-it rise"><b>0</b><span>skill yang perlu kamu punya sebelum mulai</span></div>
+  </div>
+</div>
+
+<!-- ===== pemandu pilihan ===== -->
+<section class="sec">
+  <div class="wrap">
+    <h2 class="rise col">Dua Kelas, Beda Tujuan. <span class="soft">Ini Cara Cepat Milihnya.</span></h2>
+    <div class="choose">
+      <div class="pick rise">
+        <p class="for">Buat yang jualan</p>
+        <h3>Creator Booster AI</h3>
+        <dl>
+          <dt>Buat kamu yang</dt>
+          <dd>jualan atau affiliate, butuh banyak konten tiap minggu</dd>
+          <dt>Yang kamu bisa setelahnya</dt>
+          <dd>produksi konten produk cepat dan berulang</dd>
+          <dt>Paling cocok untuk</dt>
+          <dd>seller TikTok dan Shopee, affiliate, UMKM</dd>
+        </dl>
+      </div>
+      <div class="pick rise">
+        <p class="for">Buat yang bercerita</p>
+        <h3>Storytelling AI</h3>
+        <dl>
+          <dt>Buat kamu yang</dt>
+          <dd>mau bikin video bercerita untuk brand atau nama sendiri</dd>
+          <dt>Yang kamu bisa setelahnya</dt>
+          <dd>bikin video yang ditonton orang sampai habis</dd>
+          <dt>Paling cocok untuk</dt>
+          <dd>pemilik brand, kreator, personal branding</dd>
+        </dl>
+      </div>
+    </div>
+
+    <p class="helper rise">
+      <b>Masih bingung?</b> Kalau kamu punya produk yang mau dijual, mulai dari Creator Booster AI. Kalau kamu mau orang kenal dan ingat kamu, mulai dari Storytelling AI. Atau ambil dua-duanya sekaligus, <b>Rp338.000</b> dari harga normal Rp398.000, <b>hemat Rp60.000</b>.
+    </p>
+  </div>
+</section>
+
+<!-- ===== keluhan ===== -->
+<section class="sec" style="background:var(--paper-2);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <h2 class="rise col">Coba Cek, Berapa Banyak yang <span class="soft">Kamu Alamin Ini</span></h2>
+    <div class="aches">
+      <div class="ache rise"><q>Tutorial yang aku simpan udah puluhan, yang selesai ditonton nol.</q><p>Tiap ketemu yang menarik langsung disimpan, niatnya nanti dipelajari. Nanti itu belum datang sampai sekarang.</p></div>
+      <div class="ache rise"><q>Aku bisa bikin gambar, tapi berhenti di situ.</q><p>Gambarnya jadi, terus mau diapain. Nyambungin sampai jadi video yang enak ditonton itu bagian yang nggak pernah dijelaskan.</p></div>
+      <div class="ache rise"><q>Videonya jadi, tapi nggak ada yang nonton sampai habis.</q><p>Visualnya oke, tapi orang scroll lewat di detik ketiga. Masalahnya bukan di gambarnya.</p></div>
+      <div class="ache rise"><q>Tiap video ngajarin tool yang beda-beda.</q><p>Kamu nyoba semuanya sedikit-sedikit, dan nggak menguasai satu pun.</p></div>
+      <div class="ache rise"><q>Kalau mentok, aku nggak tahu mau nanya ke siapa.</q><p>Kolom komentar nggak dibalas. Di grup sebelah, yang jawab pakai istilah yang bikin makin bingung.</p></div>
+      <div class="ache rise"><q>Produk aku bagus, tapi kontennya gitu-gitu aja.</q><p>Foto seadanya, caption seadanya. Sementara toko sebelah kontennya kelihatan digarap serius.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== percobaan gagal ===== -->
+<section class="sec">
+  <div class="wrap col">
+    <h2 class="rise">Kamu Mungkin Udah Coba <span class="soft">Semua Ini</span></h2>
+    <ul class="tried rise">
+      <li>Nonton tutorial gratis sampai folder simpanan penuh</li>
+      <li>Beli kelas murah yang isinya cuma nyebut "pakai tool ini"</li>
+      <li>Download ratusan prompt gratisan dari grup</li>
+      <li>Nyoba sendiri tengah malam sampai kuota AI habis</li>
+    </ul>
+    <p class="turn rise">Hasilnya tetap sama: <b>nggak ada satu pun video yang selesai</b>, dan besoknya kamu balik lagi mikir dari nol.</p>
+  </div>
+</section>
+
+<!-- ===== reframe ===== -->
+<section class="sec" style="background:var(--paper-2);border-top:1px solid var(--line)">
+  <div class="wrap col">
+    <h2 class="rise">Masalahnya Bukan Kurang Materi. <span class="soft">Materinya Kebanyakan dan Nggak Berurutan.</span></h2>
+    <p class="big-body rise" style="margin-bottom:16px">Tutorial gratis di internet itu berlimpah, dan justru itu masalahnya. Tiap video dibuat berdiri sendiri, untuk orang yang levelnya beda-beda, tanpa tahu kamu sudah sampai mana.</p>
+    <p class="big-body rise" style="margin-bottom:16px">Jadi kamu loncat-loncat. Hari ini belajar bikin gambar, besoknya nonton soal voice over, lusanya ketemu tool baru dan mulai lagi dari awal. Rasanya sibuk belajar, tapi nggak pernah naik satu anak tangga pun.</p>
+    <p class="big-body rise"><strong>Yang kamu butuh bukan lebih banyak tutorial. Yang kamu butuh satu urutan yang jelas, dan tempat bertanya waktu kamu mentok.</strong></p>
+  </div>
+</section>
+
+<!-- ===== dulu -> sekarang ===== -->
+<section class="sec">
+  <div class="wrap">
+    <h2 class="rise col">Yang Berubah <span class="soft">Begitu Urutannya Jelas</span></h2>
+    <ul class="shift">
+      <li class="rise"><span class="was">Loncat-loncat, nggak tahu urutannya</span><span class="arr">JADI</span><span class="now">Modul 1 sampai 4, jelas mana duluan</span></li>
+      <li class="rise"><span class="was">Tiap video pakai tool yang beda</span><span class="arr">JADI</span><span class="now">Satu alur kerja, dipakai berulang</span></li>
+      <li class="rise"><span class="was">Berhenti di "bisa bikin gambar"</span><span class="arr">JADI</span><span class="now">Lanjut sampai jadi video utuh dan diupload</span></li>
+      <li class="rise"><span class="was">Mentok, nggak ada yang jawab</span><span class="arr">JADI</span><span class="now">Ada grup pendampingan, tinggal tanya</span></li>
+      <li class="rise"><span class="was">Ilmunya nyebar di 40 tab</span><span class="arr">JADI</span><span class="now">Semua di satu tempat, bisa dibuka lagi kapan saja</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== simulasi ===== -->
+<section class="sec dark">
+  <div class="wrap col">
+    <p class="kicker rise">Biar kebayang</p>
+    <h2 class="rise">Malam Pertama Kamu Kelihatannya Seperti Apa</h2>
+
+    <div class="rail">
+      <div class="beat rise">
+        <p class="t">20.10</p>
+        <h3>Pulang kerja, kamu buka modul 1</h3>
+        <p>Belum disuruh install apa-apa. Modul pertama isinya kenapa satu video bisa bikin orang betah nonton, dan kenapa video kebanyakan nggak.</p>
+      </div>
+      <div class="beat rise">
+        <p class="t">20.40</p>
+        <h3>Kamu ngetik satu kalimat</h3>
+        <p class="typed">"Ibu muda lagi lipat baju yang wangi banget, sambil senyum, pagi hari di dekat jendela."</p>
+      </div>
+      <div class="beat rise">
+        <p class="t">Belasan detik kemudian</p>
+        <h3>Gambarnya muncul di layar kamu</h3>
+        <p class="reply">Bukan contoh punya orang lain di video. <b>Punya kamu</b>, dari kalimat yang barusan kamu ketik sendiri.</p>
+      </div>
+      <div class="beat rise">
+        <p class="t">21.30</p>
+        <h3>Gambarnya sudah bergerak dan ada suaranya</h3>
+        <p>Dan kamu masih di rumah, masih pakai daster atau kaos oblong, tanpa perlu izin siapa pun.</p>
+      </div>
+      <div class="beat rise">
+        <p class="t">Sebelum tidur</p>
+        <h3>Kamu punya satu video buatan sendiri</h3>
+        <p>Belum sempurna. Tapi malam itu pertanyaannya berubah, dari "aku bisa nggak ya" jadi "besok bikin apa lagi ya".</p>
+      </div>
+    </div>
+
+    <div style="margin-top:36px" class="rise">
+      <a class="btn" href="#daftar">Amankan Akses Saya</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== isi kelas ===== -->
+<section class="sec">
+  <div class="wrap">
+    <h2 class="rise col">Empat Modul, Berurutan, <span class="soft">Dari Ide Sampai Diupload</span></h2>
+    <ol class="ladder">
+      <li class="rise"><h3>Mindset dan Dasar Storytelling</h3><p>Cara bikin cerita yang relate, formula yang bikin orang betah nonton, dan teknik membangun emosi dalam video.</p></li>
+      <li class="rise"><h3>Ide Konten dan Script pakai AI</h3><p>Nemuin ide yang diminati pasar, riset konten yang berpotensi jalan, bikin script otomatis, dan nyusun alur video.</p></li>
+      <li class="rise"><h3>Produksi Video pakai AI</h3><p>Generate gambar dan video, bikin voice over, editing sederhana yang hasilnya tetap rapi, dan alur kerja yang efisien.</p></li>
+      <li class="rise"><h3>Publishing dan Monetisasi</h3><p>Upload dan optimasi di TikTok, Instagram, dan YouTube, personal branding lewat storytelling, dan cara memakai video untuk jualan.</p></li>
+    </ol>
+    <p class="big-body rise col" style="margin-top:26px"><strong>Materinya video step by step, dan bisa kamu ulang sebanyak yang kamu mau.</strong> Tapi kamu nggak belajar sendirian, ada grup pendampingannya.</p>
+  </div>
+</section>
+
+<!-- ===== jalur cuan + tarif pasar ===== -->
+<section class="sec money">
+  <div class="wrap">
+    <p class="kicker rise">Bukan buat keren-kerenan doang</p>
+    <h2 class="rise col">Jalur Cuannya <span class="soft">Kami Spill Juga.</span></h2>
+    <p class="big-body rise col">Bisa bikin video AI itu baru setengah cerita. Setengahnya lagi, mau dipakai buat apa. Jadi di kelas ini kami buka semua jalurnya, mana yang realistis buat kamu kerjain sesuai waktu dan keadaanmu sekarang, dan mana yang mending dilewat.</p>
+
+    <ul class="rail-x rise">
+      <li><b>01</b><h3>Konten tanpa perlu tampil</h3><p>Bikin konten yang jalan sendiri tanpa kamu harus muncul di depan kamera.</p></li>
+      <li><b>02</b><h3>Jasa video AI untuk klien lokal</h3><p>UMKM, toko, dan brand di sekitarmu butuh konten. Kebanyakan belum tahu bisa dibikin secepat ini.</p></li>
+      <li><b>03</b><h3>Klien luar negeri</h3><p>Jenis kerjaan yang sama, dibayar pakai mata uang yang beda.</p></li>
+      <li><b>04</b><h3>Usaha sendiri naik kelas</h3><p>Kontennya kelihatan digarap serius, jadi produkmu berhenti kelihatan murah.</p></li>
+      <li><b>05</b><h3>Nilai kamu naik di tempat kerja</h3><p>Skill yang bikin kamu jadi orang yang dicari di kantor, bukan yang tergantikan.</p></li>
+    </ul>
+    <p class="hint-x rise">Geser untuk lihat semuanya</p>
+
+    <div class="rates">
+      <div class="rates-facts rise">
+        <h3>Biar kamu tahu skill ini dihargai berapa di luar</h3>
+        <div class="fact">
+          <b>Rp88 ribu sampai Rp142 ribu</b>
+          <span>Satu gambar AI yang kualitasnya layak jual, sekitar 5 sampai 8 dolar. Satu gambar.</span>
+        </div>
+        <div class="fact">
+          <b>Rp4,4 juta</b>
+          <span>Satu video AI durasi 1 sampai 2 menit, sekitar 250 dolar. Satu video, nyaris sebulan UMK Surabaya.</span>
+        </div>
+        <p class="rates-note">Itu bukan tarif tertinggi. Itu tarif wajar yang dibayar klien luar negeri untuk pekerjaan yang di kelas ini kamu pelajari cara bikinnya.</p>
+      </div>
+
+      <figure class="rates-proof rise">
+        <!-- FOTO_PAYPAL: screenshot pembayaran PayPal milik Kazna Story Studio.
+             SENSOR DULU: alamat email, nama lengkap pengirim, dan ID transaksi.
+             Yang boleh kelihatan cuma nominal, mata uang, dan tanggal. 800x1000. -->
+        <div class="slot" style="min-height:280px">FOTO_PAYPAL<br>Screenshot pembayaran PayPal, 800 x 1000<br>email, nama pengirim, dan ID transaksi disensor</div>
+        <figcaption>Ini pembayaran yang masuk ke Kazna Story Studio dari klien luar negeri. Kami tampilkan bukan buat janjiin kamu bakal dapat segini, tapi supaya kamu tahu pasarnya nyata dan harganya segitu. Berapa yang kamu ambil dari pasar itu, tergantung kamu.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== pembeda ===== -->
+<section class="sec" style="background:var(--paper-2);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <h2 class="rise col">Bukan Cuma "Diajarin AI", <span class="soft">Ini yang Kamu Dapat</span></h2>
+    <div class="bento">
+      <div class="cell b-lg deep rise">
+        <h3>Mentok jam 11 malam? Tulis di grup.</h3>
+        <p>Dibantu sampai jalan, bukan dibalas pakai istilah yang bikin makin bingung. Ini bagian yang nggak bisa digantikan video, dan alasan kenapa kelas ini beda dari tutorial gratisan.</p>
+      </div>
+      <div class="cell b-sm amber rise">
+        <h3>Kamu yang pegang kendali</h3>
+        <p>Script, karakter, tone suara, sampai durasinya kamu yang tentukan. Bukan template.</p>
+      </div>
+      <div class="cell b-sm rise">
+        <h3>Durasi panjang, bukan potongan 8 detik</h3>
+        <p>Bagian nyambungin jadi cerita utuh justru yang paling jarang diajarkan.</p>
+      </div>
+      <div class="cell b-sm rise">
+        <h3>Urutannya jelas</h3>
+        <p>Kamu tahu hari ini buka yang mana, dan besok lanjut ke mana.</p>
+      </div>
+      <div class="cell b-sm rise">
+        <h3>Sekali bayar, akses selamanya</h3>
+        <p>Termasuk materi yang kami tambah kemudian.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== tanpa jadwal ===== -->
+<section class="sec noschedule">
+  <div class="wrap">
+    <div class="steps rise">
+      <div><b>Bayar</b><span>Lunas atau DP Rp50.000, lewat halaman resmi</span></div>
+      <div><b>Akses terbuka</b><span>Nggak nunggu batch, nggak nunggu jadwal</span></div>
+      <div><b>Mulai malam ini</b><span>Buka modul 1 dari HP atau laptop</span></div>
+    </div>
+    <p class="shout rise">Kelas ini <em>nggak punya jadwal.</em> Nggak ada batch, nggak ada jam masuk, nggak perlu izin kerja.</p>
+  </div>
+</section>
+
+<!-- ===== kualifikasi ===== -->
+<section class="sec">
+  <div class="wrap">
+    <h2 class="rise col">Kelas Ini <span class="soft">Buat Kamu Kalau</span></h2>
+    <div class="fit">
+      <ul class="rise">
+        <li>Kamu belum pernah bikin video AI sama sekali</li>
+        <li>Kamu udah bisa bikin, tapi hasilnya masih kerasa "AI banget" dan belum berani dijual</li>
+        <li>Kamu punya usaha dan butuh konten yang kelihatan digarap serius</li>
+        <li>Kamu kreator yang nggak pede tampil di depan kamera</li>
+        <li>Kamu pelajar, mahasiswa, guru, atau karyawan yang mau nambah skill baru</li>
+      </ul>
+      <div class="nofit rise">
+        <b>Tapi kalau kamu nyari yang instan</b>
+        Beli hari ini, besok ada yang transfer ke rekeningmu tanpa kamu praktik. Ini bukan buat kamu. Materinya jelas dan berurutan, tapi tetap kamu yang harus buka dan ngerjain.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== bukti ===== -->
+<section class="sec" style="background:var(--paper-2);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <h2 class="rise col">Kelas Ini Sudah Jalan, <span class="soft">Online dan Offline</span></h2>
+    <p class="proof-note rise">Kelas offline kami rutin di Surabaya dan sudah masuk batch keempat. Materi yang sama itulah yang kamu pelajari di kelas online ini. Catatan jujur: kutipan tertulis dari alumni masih kami kumpulkan izinnya, jadi di sini kami tampilkan dokumentasi dan karya peserta apa adanya, bukan testimoni yang dikarang.</p>
+    <div class="gal">
+      <figure class="rise">
+        <!-- FOTO_1: dokumentasi kelas, wide. 1200x700 -->
+        <div class="slot" style="min-height:250px">FOTO_1<br>Dokumentasi kelas, 1200 x 700</div>
+        <figcaption>Suasana kelas offline di Surabaya.</figcaption>
+      </figure>
+      <figure class="rise">
+        <!-- FOTO_2: karya peserta. 600x700 -->
+        <div class="slot" style="min-height:250px">FOTO_2<br>Karya peserta, 600 x 700</div>
+        <figcaption>Karya peserta.</figcaption>
+      </figure>
+      <figure class="rise">
+        <!-- FOTO_3: karya peserta. 600x700 -->
+        <div class="slot" style="min-height:250px">FOTO_3<br>Karya peserta, 600 x 700</div>
+        <figcaption>Karya peserta untuk konten usaha.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== offer stack ===== -->
+<section class="sec">
+  <div class="wrap">
+    <p class="kicker rise">Yang kamu dapat</p>
+    <h2 class="rise col">Selain Materinya, <span class="soft">Semua Ini Ikut Kamu</span></h2>
+
+    <div class="headline-offer rise">
+      <p class="lab">Produk utama</p>
+      <h3>Kelas Online AI Kazna Story Studio</h3>
+      <p>Empat modul berurutan, akses seumur hidup, termasuk materi yang kami tambah kemudian, plus grup pendampingan.</p>
+      <span class="tagval">Nilai Rp499.000</span>
+    </div>
+
+    <p class="big-body rise" style="margin:30px 0 0"><strong>Tujuh Tools AI Kazna Studio</strong>, masing-masing bernilai Rp49.000. Ini yang motong waktu kerjamu di bagian yang biasanya bikin frustasi.</p>
+
+    <div class="tools">
+      <div class="tool rise"><h4>Kazna Character Studio</h4><p>Karakter AI yang mukanya konsisten dari scene ke scene.</p><span class="tagval">Rp49.000</span></div>
+      <div class="tool rise"><h4>MatchStyle</h4><p>Tempel foto referensi, gayanya ditiru untuk gambar kamu.</p><span class="tagval">Rp49.000</span></div>
+      <div class="tool rise"><h4>Restorasi &amp; Upscale Foto</h4><p>Foto lama yang buram jadi tajam dan layak dipakai.</p><span class="tagval">Rp49.000</span></div>
+      <div class="tool rise"><h4>Video Explainer</h4><p>Ubah materi atau penjelasan jadi video yang enak ditonton.</p><span class="tagval">Rp49.000</span></div>
+      <div class="tool rise"><h4>AdBoard Auto</h4><p>Bikin materi iklan tanpa mulai dari halaman kosong.</p><span class="tagval">Rp49.000</span></div>
+      <div class="tool rise"><h4>Pas Foto AI</h4><p>Pas foto rapi dari foto biasa, nggak perlu ke studio.</p><span class="tagval">Rp49.000</span></div>
+      <div class="tool rise"><h4>AI Camera Viewfinder</h4><p>Bantu nentuin angle dan framing sebelum kamu generate.</p><span class="tagval">Rp49.000</span></div>
+    </div>
+
+    <div class="bento" style="margin-top:18px">
+      <div class="cell b-full amber rise">
+        <h3>E-Book Peta Cuan AI + 50 Prompt Siap Pakai</h3>
+        <p>Peta jalur menghasilkan dari AI, buat kamu baca setelah bisa. Isinya enam cabang cuan lengkap dengan cara kerjanya, plus 50 prompt yang tinggal salin dan ganti isian.</p>
+        <span class="tagval">Rp49.000</span>
+      </div>
+    </div>
+
+    <div class="sum rise">
+      <p class="lab">Total nilai kalau dibeli terpisah</p>
+      <s>Rp891.000</s>
+      <span class="plus">Kamu bayar Rp199.000, dan materinya nggak hangus.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== lunas vs dp ===== -->
+<section class="sec" style="background:var(--paper-2);border-top:1px solid var(--line)">
+  <div class="wrap col">
+    <h2 class="rise">Belum Sanggup Lunas? <span class="soft">Boleh Mulai dari Rp50.000.</span></h2>
+    <div class="plans-wrap rise">
+      <table class="plans">
+        <thead>
+          <tr><th>&nbsp;</th><th>Lunas Rp199.000</th><th>DP Rp50.000</th></tr>
+        </thead>
+        <tbody>
+          <tr><th>Akses kelas</th><td>Langsung terbuka</td><td>Langsung terbuka</td></tr>
+          <tr><th>7 Tools AI Kazna</th><td>Dapat</td><td>Dapat</td></tr>
+          <tr><th>E-Book Peta Cuan AI</th><td>Dapat hari ini</td><td>Dibuka setelah pelunasan</td></tr>
+          <tr><th>Sisa pembayaran</th><td>Tidak ada</td><td>Rp149.000, satu bulan dari tanggal DP</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="plans-note rise">Jalur DP kami sediakan buat yang memang belum sanggup di depan, bukan buat menunda. Kalau kamu sanggup lunas, ambil yang lunas, semuanya langsung kamu terima hari ini juga.</p>
+  </div>
+</section>
+
+<!-- ===== paket flashdisk ===== -->
+<section class="sec fd">
+  <div class="wrap">
+    <p class="kicker rise">Buat yang males login-login</p>
+    <h2 class="rise col">Mau Materinya <span class="soft">Langsung Ada di Perangkat Kamu?</span></h2>
+    <p class="big-body rise col">Sebagian orang memang lebih tenang kalau materinya ada bentuknya, bisa dicolok, bisa dibuka kapan saja tanpa mikirin sinyal atau lupa password. Buat kamu yang begitu, kami siapkan versi flashdisk.</p>
+
+    <div class="fd-grid">
+      <ul class="fd-list rise">
+        <li><b>Semua materi kelas ada di dalamnya.</b> Tinggal colok ke laptop, langsung diputar, nggak perlu login dan nggak perlu internet.</li>
+        <li><b>Flashdisk original bergaransi resmi.</b> Bukan flashdisk abal-abal yang filenya hilang sebulan kemudian.</li>
+        <li><b>Akses online tetap kamu dapat.</b> Jadi kalau ada materi tambahan, kamu tetap kebagian lewat akun kamu.</li>
+        <li><b>Tujuh Tools AI Kazna dan E-Book Peta Cuan AI tetap ikut.</b> Sama seperti paket lunas.</li>
+        <li><b>Grup pendampingan tetap terbuka.</b> Kamu tetap bisa nanya kapan pun mentok.</li>
+      </ul>
+
+      <div class="fd-card rise">
+        <p class="lab">Paket Flashdisk</p>
+        <p class="num">Rp299.000</p>
+        <p class="sub">Sudah termasuk kelas online, tools, dan e-book</p>
+        <a class="btn wide" href="https://wa.me/6285122729821?text=Halo%20Kak%20Salma%2C%20saya%20mau%20ambil%20paket%20Flashdisk%20Rp299.000" target="_blank" rel="noopener">Ambil Paket Flashdisk</a>
+        <p class="ship">Dikirim ke alamat kamu. Setelah pembayaran masuk, akses online-nya dibuka hari itu juga sambil menunggu paketnya sampai.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== harga ===== -->
+<section class="sec">
+  <div class="wrap col">
+    <div class="price rise">
+      <s>Rp891.000</s>
+      <p class="num">Rp199.000</p>
+      <span class="cut">Hemat Rp692.000, sekitar 78%</span>
+
+      <ul>
+        <li>Kelas online 4 modul, akses seumur hidup</li>
+        <li>7 Tools AI Kazna Studio</li>
+        <li>E-Book Peta Cuan AI + 50 prompt siap pakai</li>
+        <li>Grup pendampingan</li>
+        <li>Garansi 7 hari, uang kembali 100%</li>
+      </ul>
+
+      <div class="tiers">
+        <div><span>Satu kelas</span><b>Rp199.000</b></div>
+        <div><span>Dua kelas sekaligus, hemat Rp60.000</span><b>Rp338.000</b></div>
+        <div><span>Paket flashdisk, materi ada di perangkat</span><b>Rp299.000</b></div>
+        <div><span>Mau nyicil</span><b>DP Rp50.000</b></div>
+      </div>
+
+      <div style="margin-top:26px"><a class="btn wide" href="#daftar">Amankan Akses Saya</a></div>
+    </div>
+
+    <div class="honest rise">
+      <b>Kenapa harganya Rp199.000 padahal isinya segini?</b>
+      Karena kelas online ini pintu masuk, bukan produk yang kami kejar untungnya. Kami lebih ingin materinya kepakai beneran dan orangnya jalan, karena dari situ biasanya lanjut ke kelas offline atau private. Harganya murah bukan karena materinya dipotong.
+    </div>
+  </div>
+</section>
+
+<!-- ===== checkout ===== -->
+<section class="sec" id="daftar" style="background:var(--paper-2);border-top:1px solid var(--line)">
+  <div class="wrap col">
+    <h2 class="rise">Pilih Paketnya, <span class="soft">Admin Kami Bantu Sampai Beres</span></h2>
+    <p class="big-body rise" style="margin-bottom:28px">Klik salah satu di bawah, kamu langsung terhubung ke WhatsApp admin kami dengan pesan yang sudah terisi. Jadi kamu nggak perlu ngetik panjang, dan nggak perlu jelasin ulang dari awal.</p>
+
+    <div class="formbox rise">
+      <div class="picks">
+        <a class="pickbtn" href="https://wa.me/6285122729821?text=Halo%20Kak%20Salma%2C%20saya%20mau%20daftar%20kelas%20Storytelling%20AI%20Rp199.000" target="_blank" rel="noopener">
+          <span><b>Storytelling AI</b><span>Video bercerita untuk brand dan personal branding</span></span>
+          <i>Rp199.000</i>
+        </a>
+        <a class="pickbtn" href="https://wa.me/6285122729821?text=Halo%20Kak%20Salma%2C%20saya%20mau%20daftar%20kelas%20Creator%20Booster%20AI%20Rp199.000" target="_blank" rel="noopener">
+          <span><b>Creator Booster AI</b><span>Konten cepat untuk jualan dan affiliate</span></span>
+          <i>Rp199.000</i>
+        </a>
+        <a class="pickbtn hot span2" href="https://wa.me/6285122729821?text=Halo%20Kak%20Salma%2C%20saya%20mau%20ambil%20paket%202%20kelas%20Rp338.000" target="_blank" rel="noopener">
+          <span><b>Ambil dua-duanya</b><span>Storytelling AI dan Creator Booster AI, hemat Rp60.000</span></span>
+          <i>Rp338.000</i>
+        </a>
+        <a class="pickbtn span2 quiet" href="https://wa.me/6285122729821?text=Halo%20Kak%20Salma%2C%20saya%20mau%20daftar%20kelas%20online%20dengan%20DP%20Rp50.000" target="_blank" rel="noopener">
+          <span><b>Belum sanggup lunas? Mulai dari DP</b><span>Kelas langsung dibuka, sisanya sebulan kemudian</span></span>
+          <i>Rp50.000</i>
+        </a>
+      </div>
+
+      <p class="safe">
+        <b>Admin akan mengirimkan link pembayaran resmi kami di kaznastorystudio.myr.id.</b>
+        Kamu nggak perlu transfer ke rekening pribadi siapa pun. Setelah pembayaran masuk, akses kelas dikirim ke email kamu dan kamu diundang ke grup pendampingan.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== garansi ===== -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap col">
+    <div class="promise rise">
+      <h2>Tujuh Hari. Belum Bisa Bikin Satu Pun Konten AI, <span class="soft">Uang Kembali 100%.</span></h2>
+      <p>Buka modul 1 sampai 3, kerjakan praktiknya, dan kalau dalam 7 hari kamu masih belum bisa menghasilkan satu video atau konten AI pun, uang kamu kembali penuh. Cukup kirimkan bukti kamu sudah mencoba, berupa file latihan atau tangkapan layar hasilnya.</p>
+      <p>Untuk jalur DP, garansi berlaku dengan pengembalian DP Rp50.000 dan akses kelas ditutup. Kami berani menulis ini karena selama tujuh hari itu kamu bisa nanya apa saja di grup, dan tugas kami memang mastiin kamu nggak nyangkut sendirian.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== faq ===== -->
+<section class="sec" style="background:var(--paper-2);border-top:1px solid var(--line)">
+  <div class="wrap col">
+    <h2 class="rise">Pertanyaan yang <span class="soft">Paling Sering Masuk</span></h2>
+    <div class="rise" style="margin-top:26px">
+      <details>
+        <summary>Bedanya Creator Booster AI sama Storytelling AI apa?</summary>
+        <div class="ans">Creator Booster fokus produksi konten cepat untuk jualan dan affiliate. Storytelling fokus bikin video bercerita yang bikin orang nonton sampai habis. Kalau kamu punya produk yang mau dijual, mulai dari Creator Booster. Kalau kamu mau dikenal dan diingat, mulai dari Storytelling. Kalau mau dua-duanya, ada paket Rp338.000.</div>
+      </details>
+      <details>
+        <summary>Jadwal kelasnya kapan?</summary>
+        <div class="ans">Nggak ada jadwal. Ini kelas online, materinya sudah siap dan bisa kamu buka begitu pembayaran masuk, termasuk malam ini juga. Nggak ada batch, nggak perlu nunggu, dan nggak perlu izin kerja.</div>
+      </details>
+      <details>
+        <summary>Materinya cuma video tutorial saja?</summary>
+        <div class="ans">Videonya memang inti materinya, tapi kamu nggak belajar sendirian. Ada grup pendampingan, jadi waktu kamu mentok di satu langkah, tinggal tanya dan dibantu sampai jalan. Bagian itu yang nggak bisa digantikan video, dan itu juga yang bikin orang akhirnya selesai, bukan berhenti di tengah.</div>
+      </details>
+      <details>
+        <summary>Aku gaptek dan cuma punya HP, bisa ikut?</summary>
+        <div class="ans">Bisa. Sebagian besar praktiknya jalan di HP, laptop cuma lebih lega. Yang perlu kamu bisa cuma satu, ngetik kalimat bahasa Indonesia biasa. Sisanya diajarkan dari awal, dan kalau ada yang belum kebayang, tanya di grup.</div>
+      </details>
+      <details>
+        <summary>DP-nya gimana, dan apa yang belum aku dapat?</summary>
+        <div class="ans">DP Rp50.000, kelasnya langsung terbuka, dan tujuh tools-nya tetap kamu dapat. Yang ditahan cuma E-Book Peta Cuan AI senilai Rp49.000, dan itu dibuka setelah pelunasan Rp149.000 masuk, satu bulan dari tanggal DP kamu.</div>
+      </details>
+      <details>
+        <summary>Paket flashdisk itu isinya apa, dan bedanya apa sama yang online?</summary>
+        <div class="ans">Isinya semua materi kelas dalam bentuk file di flashdisk original bergaransi resmi, jadi tinggal colok ke laptop dan langsung diputar tanpa login dan tanpa internet. Akses online, tujuh tools, e-book, dan grup pendampingannya tetap kamu dapat, sama seperti paket lunas. Harganya Rp299.000 dan flashdisknya dikirim ke alamat kamu, sementara akses online-nya dibuka hari itu juga.</div>
+      </details>
+      <details>
+        <summary>Ini aman? Bayarnya ke mana?</summary>
+        <div class="ans">Kamu chat admin kami dulu lewat WhatsApp, lalu admin mengirimkan link pembayaran resmi di kaznastorystudio.myr.id. Jadi bukan transfer ke rekening pribadi. Kamu juga dilindungi garansi 7 hari uang kembali, jadi risikonya ada di kami, bukan di kamu.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== penutup ===== -->
+<section class="sec close">
+  <div class="wrap col">
+    <h2 class="rise">Tutorial Berikutnya Bisa Kamu Simpan Lagi Seperti yang Sebelumnya,<span class="l2">atau Malam Ini Kamu Punya Video Pertama.</span></h2>
+    <p class="rise">Yang membedakan orang yang akhirnya bisa dan yang masih nyimpen tutorial tahun depan biasanya bukan bakat. Cuma satu malam, dan keputusan buat mulai.</p>
+    <div class="rise">
+      <a class="btn" href="#daftar">Amankan Akses Saya</a>
+      <p class="under-btn">Rp199.000 sekali bayar. Garansi 7 hari, uang kembali 100%.</p>
+    </div>
+  </div>
+</section>
+
+<div class="foot">
+  <div class="wrap">
+    <b>Kelas Online AI Kazna Story Studio</b>
+    Kazna Story Studio, Jl. Karang Klumprik Tengah No. 4, Surabaya<br>
+    &copy; 2026 Kazna Story Studio.
+    <p class="fine">Hasil setiap peserta berbeda-beda, tergantung ide, produk, dan kesungguhan mempraktikkan materinya. Kelas ini mengajarkan keterampilan produksi video dengan AI, bukan janji penghasilan dalam jumlah tertentu. Garansi berlaku 7 hari sejak akses diberikan, dengan syarat modul 1 sampai 3 sudah dibuka dan praktiknya dikerjakan.</p>
+  </div>
+</div>
+
+</div>
+
+<script>
+(function () {
+  var root = document.querySelector('.kss');
+  if (!root) return;
+  var items = root.querySelectorAll('.rise');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) {
+    for (var i = 0; i < items.length; i++) items[i].classList.add('in');
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  items.forEach(function (el, i) {
+    el.style.transitionDelay = (Math.min(i % 4, 3) * 60) + 'ms';
+    io.observe(el);
+  });
+})();
+</script>
+</body>
+</html>
