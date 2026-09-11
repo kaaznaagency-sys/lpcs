@@ -382,6 +382,15 @@ CATATAN
 .kss .pickbtn.span2{grid-column:1 / -1;}
 .kss .pickbtn.quiet{background:transparent;border-style:dashed;}
 .kss .pickbtn.quiet b{color:var(--body);}
+.kss .dpbox{margin-top:14px;border:1px dashed var(--line-strong);border-radius:var(--r-box);padding:22px;background:var(--paper);}
+@media(min-width:900px){ .kss .dpbox{padding:26px 28px;} }
+.kss .dpbox .dp-t{display:block;font-size:17.5px;font-weight:800;color:var(--ink);letter-spacing:-.02em;}
+.kss .dpbox p{font-size:15px;line-height:1.66;color:var(--body);margin-top:9px;}
+.kss .rek{margin:18px 0;padding:18px 20px;border-radius:14px;background:var(--ink);}
+.kss .rek span{display:block;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--amber);font-weight:800;}
+.kss .rek b{display:block;font-size:25px;font-weight:800;color:#fff;letter-spacing:.05em;margin:7px 0 5px;}
+@media(min-width:600px){ .kss .rek b{font-size:30px;} }
+.kss .rek i{font-style:normal;display:block;font-size:14.5px;color:#B9C7DC;}
 .kss .safe{margin-top:20px;padding:16px 18px;border-radius:14px;background:var(--tint);
   font-size:15px;line-height:1.62;color:var(--body);}
 .kss .safe b{color:var(--ink);}
@@ -483,9 +492,9 @@ CATATAN
         <h3>Creator Booster AI</h3>
         <dl>
           <dt>Buat kamu yang</dt>
-          <dd>jualan atau affiliate, butuh banyak konten tiap minggu</dd>
+          <dd>jualan atau affiliate, butuh banyak konten tiap hari</dd>
           <dt>Yang kamu bisa setelahnya</dt>
-          <dd>produksi konten produk cepat dan berulang</dd>
+          <dd>produksi konten hyper realist dengan cepat dan berulang</dd>
           <dt>Paling cocok untuk</dt>
           <dd>seller TikTok dan Shopee, affiliate, UMKM</dd>
         </dl>
@@ -497,7 +506,7 @@ CATATAN
           <dt>Buat kamu yang</dt>
           <dd>mau bikin video bercerita untuk brand atau nama sendiri</dd>
           <dt>Yang kamu bisa setelahnya</dt>
-          <dd>bikin video yang ditonton orang sampai habis</dd>
+          <dd>bikin video durasi panjang dengan karakter yang konsisten</dd>
           <dt>Paling cocok untuk</dt>
           <dd>pemilik brand, kreator, personal branding</dd>
         </dl>
@@ -863,32 +872,40 @@ CATATAN
 <!-- ===== checkout ===== -->
 <section class="sec" id="daftar" style="background:var(--paper-2);border-top:1px solid var(--line)">
   <div class="wrap col">
-    <h2 class="rise">Pilih Paketnya, <span class="soft">Admin Kami Bantu Sampai Beres</span></h2>
-    <p class="big-body rise" style="margin-bottom:28px">Klik salah satu di bawah, kamu langsung terhubung ke WhatsApp admin kami dengan pesan yang sudah terisi. Jadi kamu nggak perlu ngetik panjang, dan nggak perlu jelasin ulang dari awal.</p>
+    <h2 class="rise">Pilih Paketnya, <span class="soft">Aksesnya Langsung Terbuka</span></h2>
+    <p class="big-body rise" style="margin-bottom:28px">Klik paket yang kamu mau, kamu langsung masuk ke halaman pembayaran resmi kami. Nggak perlu chat dulu, nggak perlu nunggu dibalas. Kalau mau mulai dari DP, caranya ada di bawah.</p>
 
     <div class="formbox rise">
       <div class="picks">
-        <a class="pickbtn" href="https://wa.me/6285122729821?text=Halo%20Kak%20Salma%2C%20saya%20mau%20daftar%20kelas%20Storytelling%20AI%20Rp199.000" target="_blank" rel="noopener">
+        <a class="pickbtn" href="https://kaznastorystudio.myr.id/course/video-storytelling-ai" target="_blank" rel="noopener">
           <span><b>Storytelling AI</b><span>Video bercerita untuk brand dan personal branding</span></span>
           <i>Rp199.000</i>
         </a>
-        <a class="pickbtn" href="https://wa.me/6285122729821?text=Halo%20Kak%20Salma%2C%20saya%20mau%20daftar%20kelas%20Creator%20Booster%20AI%20Rp199.000" target="_blank" rel="noopener">
+        <a class="pickbtn" href="https://kaznastorystudio.myr.id/course/creator-booster-ai" target="_blank" rel="noopener">
           <span><b>Creator Booster AI</b><span>Konten cepat untuk jualan dan affiliate</span></span>
           <i>Rp199.000</i>
         </a>
-        <a class="pickbtn hot span2" href="https://wa.me/6285122729821?text=Halo%20Kak%20Salma%2C%20saya%20mau%20ambil%20paket%202%20kelas%20Rp338.000" target="_blank" rel="noopener">
+        <a class="pickbtn hot span2" href="https://kaznastorystudio.myr.id/course/bundling-course-storytelling-creator-booster/" target="_blank" rel="noopener">
           <span><b>Ambil dua-duanya</b><span>Storytelling AI dan Creator Booster AI, hemat Rp60.000</span></span>
           <i>Rp338.000</i>
         </a>
-        <a class="pickbtn span2 quiet" href="https://wa.me/6285122729821?text=Halo%20Kak%20Salma%2C%20saya%20mau%20daftar%20kelas%20online%20dengan%20DP%20Rp50.000" target="_blank" rel="noopener">
-          <span><b>Belum sanggup lunas? Mulai dari DP</b><span>Kelas langsung dibuka, sisanya sebulan kemudian</span></span>
-          <i>Rp50.000</i>
-        </a>
+      </div>
+
+      <div class="dpbox">
+        <b class="dp-t">Belum sanggup lunas? Mulai dari DP Rp50.000</b>
+        <p>Kelas langsung dibuka, sisanya Rp149.000 dilunasi sebulan kemudian. Khusus DP, pembayarannya lewat transfer manual ke rekening ini.</p>
+        <div class="rek">
+          <span>Bank Mandiri</span>
+          <b>1480028362583</b>
+          <i>a.n. Andi Norhadi Wibowo</i>
+        </div>
+        <a class="btn wide" href="https://wa.me/6285122729821?text=Halo%20Kak%20Salma%2C%20saya%20sudah%20transfer%20DP%20Rp50.000%20untuk%20kelas%20online.%20Ini%20bukti%20transfernya." target="_blank" rel="noopener">Sudah Transfer, Konfirmasi ke CS</a>
+        <p>Setelah kamu konfirmasi, akses kelas dibuka dan kamu diundang ke grup premiumnya.</p>
       </div>
 
       <p class="safe">
-        <b>Admin akan mengirimkan link pembayaran resmi kami di kaznastorystudio.myr.id.</b>
-        Kamu nggak perlu transfer ke rekening pribadi siapa pun. Setelah pembayaran masuk, akses kelas dikirim ke email kamu dan kamu diundang ke grup pendampingan.
+        <b>Pembayaran lunas diproses di halaman resmi kami, kaznastorystudio.myr.id.</b>
+        Begitu pembayaran masuk, akses kelas dikirim ke email kamu dan kamu diundang ke grup pendampingan, tanpa perlu nunggu admin online.
       </p>
     </div>
   </div>
@@ -936,7 +953,7 @@ CATATAN
       </details>
       <details>
         <summary>Ini aman? Bayarnya ke mana?</summary>
-        <div class="ans">Kamu chat admin kami dulu lewat WhatsApp, lalu admin mengirimkan link pembayaran resmi di kaznastorystudio.myr.id. Jadi bukan transfer ke rekening pribadi. Kamu juga dilindungi garansi 7 hari uang kembali, jadi risikonya ada di kami, bukan di kamu.</div>
+        <div class="ans">Untuk pembayaran lunas, kamu diarahkan ke halaman resmi kami di kaznastorystudio.myr.id, jadi transaksinya tercatat dan aksesnya otomatis. Khusus DP Rp50.000, transfernya manual ke rekening Bank Mandiri atas nama Andi Norhadi Wibowo, pemilik Kazna Story Studio, lalu kamu konfirmasi ke admin. Kamu juga dilindungi garansi 7 hari uang kembali, jadi risikonya ada di kami, bukan di kamu.</div>
       </details>
     </div>
   </div>
